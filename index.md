@@ -36,4 +36,4 @@ As result of research you need to submit your submission.csv file and report in 
 [Click here to submit results](https://script.google.com/macros/s/AKfycbxLhtN40Ir_Y1dcfAzv31loGUyacIxop9kv1CvxGqRtSYu2_ZB86EtnYMH6ujv98YTGXw/exec)
 
 ## Leader Board
-Not active at present time
+The final ranks will display here after the competition closes.
