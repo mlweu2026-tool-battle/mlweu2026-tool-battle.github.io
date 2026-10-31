@@ -11,7 +11,7 @@ The new kids: agents and LLM APIs. Zero-shot and few-shot prompts, agentic pipel
 Or mix them: hybrids of all three are welcome. Write every line yourself or let ChatGPT, Claude Code, Cursor or Codex write it for you. Vibe coding is explicitly allowed, and so is twenty years of ML experience. At the end, two live leaderboards settle the question. One ranks the solutions by ROC-AUC on hidden test articles. The other ranks them by quality: an LLM agent, supervised by experts, reviews every notebook for correctness, data leakage and soundness of the approach. So the highest score is not the only way to the top, and a clean, simple model can beat a flashy one. Whether you belong to the “old guard” of machine learning or to the “new kids” of generative AI: bring a laptop, pick your tools and prove that your way works best. All you need is basic Python and a Google account for Colab.
 
 ### Data
-You can load data at [https://github.com/mlweu2026-tool-battle/data](https://github.com/mlweu2026-tool-battle/data))
+You can load data at [https://github.com/mlweu2026-tool-battle/data](https://github.com/mlweu2026-tool-battle/data)
 
 As result of research you need to submit your submission.csv file and report in text format (not more than 10Kb)
 
