@@ -33,7 +33,7 @@ You can load data at [https://github.com/mlweu2026-tool-battle/data](https://git
 As result of research you need to submit your submission.csv file and report in text format (not more than 10Kb)
 
 ## Result Submission
-Submission link:
+[Click here to submit results](https://script.google.com/macros/s/AKfycbxLhtN40Ir_Y1dcfAzv31loGUyacIxop9kv1CvxGqRtSYu2_ZB86EtnYMH6ujv98YTGXw/exec)
 
 ## Leader Board
 Not active at present time
