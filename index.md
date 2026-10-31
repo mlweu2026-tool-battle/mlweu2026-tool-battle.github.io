@@ -32,7 +32,7 @@ You can load data at [https://github.com/mlweu2026-tool-battle/data](https://git
 
 As result of research you need to submit your submission.csv file and report in text format (not more than 10Kb)
 
-## Data
+## Result Submission
 Submission link:
 
 ## Leader Board
