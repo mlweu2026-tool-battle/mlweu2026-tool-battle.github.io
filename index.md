@@ -1,3 +1,8 @@
+
+---
+title: mlweu2026-tool-battle
+---
+
 ### Tool Battle: Classic ML vs. Transformers vs. LLM Agents – Who Detects Fake News Best in 60 Minutes?
 Old-school machine learning, transformers or LLM agents: which one detects fake news best? In this 60-minute hands-on competition you build a fake news classifier with the tools you trust most, with or without an AI coding assistant. Two leaderboards, one for accuracy and one for quality, show which approach wins. Bring a laptop and pick your side.
 
