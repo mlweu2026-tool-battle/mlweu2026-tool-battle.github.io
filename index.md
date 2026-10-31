@@ -1,6 +1,6 @@
-
 ---
-title: mlweu2026-tool-battle
+layout: default
+title: AI Tools Battle
 ---
 
 ### Tool Battle: Classic ML vs. Transformers vs. LLM Agents – Who Detects Fake News Best in 60 Minutes?
