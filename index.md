@@ -2,7 +2,16 @@
 layout: default
 title: AI Tools Battle
 ---
+<div style="display: flex; align-items: center; gap: 20px;">
+  <img src="mlw.png"
+       alt="AI Tools Battle Logo"
+       width="90"
+       style="height: auto;">
 
+  <h1 style="margin: 0;">
+    Machine Learning Week Europe 2026
+  </h1>
+</div>
 ### Tool Battle: Classic ML vs. Transformers vs. LLM Agents – Who Detects Fake News Best in 60 Minutes?
 Old-school machine learning, transformers or LLM agents: which one detects fake news best? In this 60-minute hands-on competition you build a fake news classifier with the tools you trust most, with or without an AI coding assistant. Two leaderboards, one for accuracy and one for quality, show which approach wins. Bring a laptop and pick your side.
 
