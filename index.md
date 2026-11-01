@@ -65,7 +65,7 @@ This evaluation recognises not only strong predictive performance but also **inn
 
 ## Data
 
-The competition dataset consists of fake and non-fake statements derived from the well-known [**LIAR2 dataset**](https://huggingface.co/datasets/chengxuphd/liar2). The original dataset has been simplified into a **binary classification task**, where the target variable `label` indicates whether a statement is fake:
+The competition dataset consists of fake and non-fake statements derived from the well-known [LIAR2 dataset](https://huggingface.co/datasets/chengxuphd/liar2). The original dataset has been simplified into a **binary classification task**, where the target variable `label` indicates whether a statement is fake:
 
 - **1**: fake news
 - **0**: not fake news
