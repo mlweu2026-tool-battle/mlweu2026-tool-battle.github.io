@@ -13,9 +13,7 @@ title: AI Tools Battle
   </h1>
 </div>
 
-## Tool Battle: Classical ML vs. Transformers vs. LLM Agents
-
-### Which approach detects fake news best in 60 minutes?
+## Tool Battle: Classical ML vs. Transformers vs. LLM Agents - Which approach detects fake news best in 60 minutes?
 
 ## Competition Overview
 
