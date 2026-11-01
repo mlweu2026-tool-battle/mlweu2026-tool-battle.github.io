@@ -76,7 +76,7 @@ The data is available at [https://github.com/mlweu2026-tool-battle/data](https:/
 
 Each participant must submit two files: `submission.csv` and `report.txt`.
 
-### 1. `submission.csv`: Prediction Results
+#### 1. `submission.csv`: Prediction Results
 
 This file must contain the predicted probability that each statement in the test dataset is fake news.
 
@@ -91,7 +91,7 @@ id,prediction
 1,0.15
 ```
 
-### 2. `report.txt`: Methods and Results
+#### 2. `report.txt`: Methods and Results
 
 This plain-text file, **no larger than 10 KB**, must briefly describe the participant's approach, including:
 
