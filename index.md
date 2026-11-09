@@ -107,35 +107,6 @@ Participants are encouraged to describe not only their final solution but also t
 
 The final rankings will appear here once the competition is over.
 
-<!-- MOCK LEADERBOARDS START: delete everything down to MOCK LEADERBOARDS END before publishing real results -->
-
-> **Mock data for layout testing only.** All participants, scores and comments below are fictional and do not reflect real results or the real performance of any method.
-
 ### Leaderboard 1: Predictive Performance (ROC-AUC)
 
-| AUC Rank | User | AUC |
-|:--:|:--|--:|
-| 1 | user 3 gpu | 0.96703 |
-| 2 | Volodymyr Havryliak | 0.89667 |
-| 3 | user 2 tr | 0.89239 |
-| 4 | Золочівська А. | 0.88240 |
-| 5 | user 1 tifidf | 0.85113 |
-| 6 | Demian Pavlyshenko | 0.79009 |
-| 7 | Test1 | 0.50000 |
-
 ### Leaderboard 2: Analytical Quality (Report Review)
-
-Report scores range from 0 to 100. In the comments, **+** marks a strength and **−** marks a weakness.
-
-| Report Rank | User | AUC Rank | Comments |
-|:--:|:--|:--:|:--|
-| 1 | Volodymyr Havryliak | 2 | **Approach:** Hybrid transformer and classical stacked ensemble<br>**Methods:** Late-fusion DeBERTa, DistilBERT, TF-IDF linear models, metadata boosting; temporal target encoding and logistic-regression stacking.<br>**Validation:** Five-fold best-single OOF AUC 0.8749; stack diagnostic 0.8781; predicted test range 0.873–0.878.<br>**Test AUC:** Test 0.89667 exceeds diagnostic 0.8781 and predicted range; no observed overfitting gap, but claimed bounds are unjustified.<br>**+** Detailed architecture, fold handling, model comparisons, and stacking diagnostics; second-best hidden-test discrimination.<br>**+** Thoughtful temporal encoding and shuffled-label controls, with explicit acknowledgement of stacking optimism.<br>**−** Reused base OOF predictions require nested validation for an unbiased stack estimate.<br>**−** Shuffle results omit transformer learners despite full-pipeline claims; chance performance cannot certify complete leakage absence. |
-| 2 | user 2 tr | 3 | **Approach:** Fine-tuned transformer ensemble<br>**Methods:** DeBERTa-v3-small and DistilBERT on text plus metadata; averaged probabilities and validation-selected checkpoints.<br>**Validation:** Stratified holdout AUC: DeBERTa 0.86972; DistilBERT 0.86510; ensemble not evaluated.<br>**Test AUC:** Ensemble test 0.89239 exceeds individual validation scores; ensemble gains or sampling variation plausible, without direct ensemble validation.<br>**+** Strong hidden-test discrimination using complementary pretrained encoders.<br>**+** Clear training configuration, stratification, checkpoint selection, and numerical-stability adaptations.<br>**−** Final ensemble was not validated, leaving its incremental benefit unmeasured.<br>**−** Small single holdout and checkpoint reuse limit confidence; contamination and duplicate overlap are unexamined. |
-| 3 | user 3 gpu | 1 | **Approach:** Zero-shot LLM classification<br>**Methods:** Reported GPT API model gpt-6.1-sol judges statements and metadata using internal knowledge; outputs fake probabilities.<br>**Validation:** No independent validation; reports labelled-test ROC-AUC 0.96529.<br>**Test AUC:** Organiser test 0.96703 matches claimed test 0.96529; absent independent validation, contamination or test-label access remains unresolved.<br>**+** Best hidden-test discrimination among submissions.<br>**+** Explicitly acknowledges memorisation risk and contradictory probability instructions.<br>**−** Labelled-test evaluation is unexplained despite supposedly hidden labels, undermining evaluation independence.<br>**−** Conflicting real/fake instructions undermine interpretability; exact prompt and API configuration are missing. |
-| 4 | Золочівська А. | 4 | **Approach:** Classical machine learning<br>**Methods:** Word unigram/bigram and character 3–5-gram TF-IDF; L2 logistic regression with selected metadata.<br>**Validation:** Stratified 80/20 holdout: ROC-AUC 0.8560; accuracy 0.7700.<br>**Test AUC:** Test 0.8824 exceeds validation 0.8560; compatible with sampling variation and full-data refitting, not evidence of leakage.<br>**+** Explicit partition-local feature fitting, target exclusion, and probability-output controls.<br>**+** Clear, reproducible pipeline with sensible complementary lexical representations.<br>**−** Single holdout provides no uncertainty estimate or speaker/duplicate robustness assessment.<br>**−** No ablations establish character-feature benefits or justify metadata exclusions. |
-| 5 | user 1 tifidf | 5 | **Approach:** Classical machine learning<br>**Methods:** Concatenated statements and metadata; word unigram-to-trigram TF-IDF with LightGBM.<br>**Validation:** Single 85/15 random holdout ROC-AUC: 0.85157.<br>**Test AUC:** Test 0.85113 closely matches validation 0.85157; no evident generalization gap, though leakage cannot be excluded.<br>**+** Training-only vectorizer fitting explicitly prevents preprocessing leakage.<br>**+** Concise, reproducible settings and fast baseline suitable for the time limit.<br>**−** Single split lacks stated stratification, uncertainty estimates, and duplicate checks.<br>**−** Metadata contribution is asserted without an ablation or error analysis. |
-| 6 | Demian Pavlyshenko | 6 | **Approach:** Classical machine learning<br>**Methods:** Field-specific TF-IDF and metadata; logistic regression selected over LightGBM.<br>**Validation:** Five-fold AUC: final 0.858 ± 0.008; text-only 0.812; LightGBM 0.840; final accuracy 0.774.<br>**Test AUC:** Test 0.7901 versus CV 0.858; substantial optimism, distribution shift, or thresholded submission scores warrant investigation.<br>**+** Thorough exploration identifies source priors, temporal drift, duplicates, and speaker overlap.<br>**+** Clear baselines, model comparisons, fold variability, and limitations.<br>**−** Random cross-validation does not isolate duplicate statements or unseen speakers.<br>**−** Reported thresholded final predictions would discard probability ranking information. |
-| 7 | Test1 | 7 | **Approach:** Unidentifiable<br>**Methods:** No identifiable models or features<br>**Validation:** not reported<br>**Test AUC:** Test AUC 0.5000 indicates chance discrimination; no validation comparison possible.<br>**−** Meaningless report provides no methodological or reproducibility information. |
-
-
-<!-- MOCK LEADERBOARDS END -->
