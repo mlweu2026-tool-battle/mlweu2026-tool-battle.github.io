@@ -113,44 +113,29 @@ The final rankings will appear here once the competition is over.
 
 ### Leaderboard 1: Predictive Performance (ROC-AUC)
 
-| Rank | Participant | Test ROC-AUC |
-| :----: | :------------ | -------------: |
-| 1 | Elena Marković | **0.8792** |
-| 2 | Tomasz Wieczorek | **0.8715** |
-| 3 | Sofia Lindqvist | **0.8668** |
-| 4 | Matteo Bianchi | 0.8594 |
-| 5 | Ingrid Halvorsen | 0.8503 |
-| 6 | Luca Moreau | 0.8441 |
-| 7 | Anna Kovalenko | 0.8376 |
-| 8 | Jonas Becker | 0.8312 |
-| 9 | Clara Fernández | 0.8247 |
-| 10 | Nikos Papadakis | 0.8139 |
-| 11 | Emma van Dijk | 0.7986 |
-| 12 | Piotr Zieliński | 0.7901 |
-| 13 | Aino Virtanen | 0.7812 |
-| 14 | Hugo Laurent | 0.7654 |
-| 15 | Daria Petrenko | 0.7423 |
+| AUC Rank | User | AUC |
+|:--:|:--|--:|
+| 1 | user 3 gpu | 0.96703 |
+| 2 | Volodymyr Havryliak | 0.89667 |
+| 3 | user 2 tr | 0.89239 |
+| 4 | Золочівська А. | 0.88240 |
+| 5 | user 1 tifidf | 0.85113 |
+| 6 | Demian Pavlyshenko | 0.79009 |
+| 7 | Test1 | 0.50000 |
 
 ### Leaderboard 2: Analytical Quality (Report Review)
 
 Report scores range from 0 to 100. In the comments, **+** marks a strength and **−** marks a weakness.
 
-| Rank | Participant | Report score | ROC-AUC rank | Comments |
-|:----:|:------------|-------------:|:------------:|:---------|
-| 1 | Ingrid Halvorsen | **94** | 5 | **+** Clear rationale, documented baselines and stratified cross-validation; validation and test scores differ by only 0.0018.<br>**−** Error analysis is limited to global feature weights. |
-| 2 | Elena Marković | **91** | 1 | **+** Out-of-fold stacking prevents leakage; ablation study quantifies each component.<br>**−** Runtime and complexity trade-offs are not discussed. |
-| 3 | Sofia Lindqvist | **89** | 3 | **+** Original use of an LLM for interpretable features, with an assessment of their importance.<br>**−** API cost and the stability of generated features are not evaluated. |
-| 4 | Anna Kovalenko | **86** | 7 | **+** Compares prompt variants systematically and retrieves examples from training data only.<br>**−** Tuned prompts on a small validation sample, with no confidence intervals. |
-| 5 | Tomasz Wieczorek | **83** | 2 | **+** Sound fine-tuning protocol with early stopping and a clear description of the metadata fusion.<br>**−** Offers little interpretation of the errors or the features that drive them. |
-| 6 | Jonas Becker | **80** | 8 | **+** Concise, reproducible pipeline with justified SVD and LightGBM settings.<br>**−** Compares only two model configurations. |
-| 7 | Aino Virtanen | **77** | 13 | **+** Candid analysis of the limits of zero-shot prompting, with useful probability calibration.<br>**−** Modest performance, and no attempt to use the labelled training data. |
-| 8 | Clara Fernández | **74** | 9 | **+** Pragmatic choice for the time limit, with a sensible comparison of embedding models.<br>**−** Metadata fields are ignored without explanation. |
-| 9 | Luca Moreau | **71** | 6 | **+** Correct training setup with a clearly reported validation split.<br>**−** Mostly lists steps, with little justification or analysis of the results. |
-| 10 | Nikos Papadakis | **67** | 10 | **+** Well-documented prompts and a clear description of the workflow.<br>**−** Probability estimates are uncalibrated, and the choice of examples is not justified. |
-| 11 | Piotr Zieliński | **63** | 12 | **+** Simple, transparent baseline that is honestly interpreted.<br>**−** No feature engineering or model comparison beyond the baseline. |
-| 12 | Matteo Bianchi | **58** | 4 | **+** Strong test score and detailed feature engineering.<br>**−** Speaker target encoding fitted before the split suggests leakage, which is consistent with a gap of 0.0533 between validation and test scores. |
-| 13 | Hugo Laurent | **52** | 14 | **+** Recognises that the one-epoch training is a limitation imposed by the time budget.<br>**−** No baseline or tuning, and the conclusions are not supported by evidence. |
-| 14 | Emma van Dijk | **47** | 11 | **+** Creative agent design with a clear architecture description.<br>**−** Web search may retrieve published fact-checks, which is a serious validity risk; the validation score exceeds the test score by 0.0947, and the gap is not investigated. |
-| 15 | Daria Petrenko | **38** | 15 | **+** Short and readable, with the prompt included.<br>**−** No validation ROC-AUC is reported, and the choice of method is not explained or analysed. |
+| Report Rank | User | AUC Rank | Comments |
+|:--:|:--|:--:|:--|
+| 1 | Volodymyr Havryliak | 2 | **Approach:** Hybrid transformer and classical stacked ensemble<br>**Methods:** Late-fusion DeBERTa, DistilBERT, TF-IDF linear models, metadata boosting; temporal target encoding and logistic-regression stacking.<br>**Validation:** Five-fold best-single OOF AUC 0.8749; stack diagnostic 0.8781; predicted test range 0.873–0.878.<br>**Test AUC:** Test 0.89667 exceeds diagnostic 0.8781 and predicted range; no observed overfitting gap, but claimed bounds are unjustified.<br>**+** Detailed architecture, fold handling, model comparisons, and stacking diagnostics; second-best hidden-test discrimination.<br>**+** Thoughtful temporal encoding and shuffled-label controls, with explicit acknowledgement of stacking optimism.<br>**−** Reused base OOF predictions require nested validation for an unbiased stack estimate.<br>**−** Shuffle results omit transformer learners despite full-pipeline claims; chance performance cannot certify complete leakage absence. |
+| 2 | user 2 tr | 3 | **Approach:** Fine-tuned transformer ensemble<br>**Methods:** DeBERTa-v3-small and DistilBERT on text plus metadata; averaged probabilities and validation-selected checkpoints.<br>**Validation:** Stratified holdout AUC: DeBERTa 0.86972; DistilBERT 0.86510; ensemble not evaluated.<br>**Test AUC:** Ensemble test 0.89239 exceeds individual validation scores; ensemble gains or sampling variation plausible, without direct ensemble validation.<br>**+** Strong hidden-test discrimination using complementary pretrained encoders.<br>**+** Clear training configuration, stratification, checkpoint selection, and numerical-stability adaptations.<br>**−** Final ensemble was not validated, leaving its incremental benefit unmeasured.<br>**−** Small single holdout and checkpoint reuse limit confidence; contamination and duplicate overlap are unexamined. |
+| 3 | user 3 gpu | 1 | **Approach:** Zero-shot LLM classification<br>**Methods:** Reported GPT API model gpt-6.1-sol judges statements and metadata using internal knowledge; outputs fake probabilities.<br>**Validation:** No independent validation; reports labelled-test ROC-AUC 0.96529.<br>**Test AUC:** Organiser test 0.96703 matches claimed test 0.96529; absent independent validation, contamination or test-label access remains unresolved.<br>**+** Best hidden-test discrimination among submissions.<br>**+** Explicitly acknowledges memorisation risk and contradictory probability instructions.<br>**−** Labelled-test evaluation is unexplained despite supposedly hidden labels, undermining evaluation independence.<br>**−** Conflicting real/fake instructions undermine interpretability; exact prompt and API configuration are missing. |
+| 4 | Золочівська А. | 4 | **Approach:** Classical machine learning<br>**Methods:** Word unigram/bigram and character 3–5-gram TF-IDF; L2 logistic regression with selected metadata.<br>**Validation:** Stratified 80/20 holdout: ROC-AUC 0.8560; accuracy 0.7700.<br>**Test AUC:** Test 0.8824 exceeds validation 0.8560; compatible with sampling variation and full-data refitting, not evidence of leakage.<br>**+** Explicit partition-local feature fitting, target exclusion, and probability-output controls.<br>**+** Clear, reproducible pipeline with sensible complementary lexical representations.<br>**−** Single holdout provides no uncertainty estimate or speaker/duplicate robustness assessment.<br>**−** No ablations establish character-feature benefits or justify metadata exclusions. |
+| 5 | user 1 tifidf | 5 | **Approach:** Classical machine learning<br>**Methods:** Concatenated statements and metadata; word unigram-to-trigram TF-IDF with LightGBM.<br>**Validation:** Single 85/15 random holdout ROC-AUC: 0.85157.<br>**Test AUC:** Test 0.85113 closely matches validation 0.85157; no evident generalization gap, though leakage cannot be excluded.<br>**+** Training-only vectorizer fitting explicitly prevents preprocessing leakage.<br>**+** Concise, reproducible settings and fast baseline suitable for the time limit.<br>**−** Single split lacks stated stratification, uncertainty estimates, and duplicate checks.<br>**−** Metadata contribution is asserted without an ablation or error analysis. |
+| 6 | Demian Pavlyshenko | 6 | **Approach:** Classical machine learning<br>**Methods:** Field-specific TF-IDF and metadata; logistic regression selected over LightGBM.<br>**Validation:** Five-fold AUC: final 0.858 ± 0.008; text-only 0.812; LightGBM 0.840; final accuracy 0.774.<br>**Test AUC:** Test 0.7901 versus CV 0.858; substantial optimism, distribution shift, or thresholded submission scores warrant investigation.<br>**+** Thorough exploration identifies source priors, temporal drift, duplicates, and speaker overlap.<br>**+** Clear baselines, model comparisons, fold variability, and limitations.<br>**−** Random cross-validation does not isolate duplicate statements or unseen speakers.<br>**−** Reported thresholded final predictions would discard probability ranking information. |
+| 7 | Test1 | 7 | **Approach:** Unidentifiable<br>**Methods:** No identifiable models or features<br>**Validation:** not reported<br>**Test AUC:** Test AUC 0.5000 indicates chance discrimination; no validation comparison possible.<br>**−** Meaningless report provides no methodological or reproducibility information. |
+
 
 <!-- MOCK LEADERBOARDS END -->
