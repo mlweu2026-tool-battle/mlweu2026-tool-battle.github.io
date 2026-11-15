@@ -108,6 +108,7 @@ Participants are encouraged to describe not only their final solution but also t
 The final rankings will appear here once the competition is over.
 
 ### Leaderboard 1: Predictive Performance (ROC-AUC)
+
 | AUC Rank | User | AUC |
 |:--:|:--|--:|
 | 1 | user 3 gpu | 0.96703 |
