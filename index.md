@@ -108,5 +108,18 @@ Participants are encouraged to describe not only their final solution but also t
 The final rankings will appear here once the competition is over.
 
 ### Leaderboard 1: Predictive Performance (ROC-AUC)
+| AUC Rank | User | AUC |
+|:--:|:--|--:|
+| 1 | user 3 gpu | 0.96703 |
+| 2 | Dmytro Khoptii | 0.89721 |
+| 3 | Volodymyr Havryliak | 0.89667 |
+| 4 | user 2 tr | 0.89239 |
+| 5 | Loskutova Anastasiia | 0.88591 |
+| 6 | Yan Pekarskyi | 0.88329 |
+| 7 | Золочівська А. | 0.88240 |
+| 8 | Vitaliy Vasiuk(FEI-42) | 0.87971 |
+| 9 | user 1 tifidf | 0.85113 |
+| 10 | Demian Pavlyshenko | 0.79009 |
+| 11 | Test1 | 0.50000 |
 
 ### Leaderboard 2: Analytical Quality (Report Review)
