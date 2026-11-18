@@ -109,5 +109,19 @@ The final rankings will appear here once the competition is over.
 
 ### Leaderboard 1: Predictive Performance (ROC-AUC)
 
+| AUC Rank | User | AUC |
+|:--:|:--|--:|
+| 1 | Dean Abbott | 0.89555 |
+| 2 | Nina | 0.88019 |
+| 3 | Martin Szugat Submission #1 | 0.87081 |
+| 4 | Simcha | 0.86346 |
+
 ### Leaderboard 2: Analytical Quality (Report Review)
+
+| Report Rank | User | AUC Rank | Comments |
+|:--:|:--|:--:|:--|
+| 1 | Dean Abbott | 1 | **Approach:** Classical machine learning ensemble<br>**Methods:** Bagged logistic regression and LightGBM; word/character TF-IDF, metadata, SVD/NMF, out-of-fold target encodings, and neighbor fake rates.<br>**Validation:** OOB-averaged ROC-AUC: LR 0.8667; LightGBM 0.8596; ensemble 0.8699; text-only 0.8094.<br>**Test AUC:** Best test 0.89555 exceeds OOB 0.8699 by 0.02565; favorable generalization, but uncertainty estimates do not explain this gap.<br>**+** Exceptionally thorough paired experiments, ablations, subgroup diagnostics, and explicit source-shortcut analysis.<br>**+** Careful bootstrap duplicate handling and reported out-of-fold label-derived features support methodological soundness.<br>**−** Train-plus-test text preprocessing is transductive and exposes OOB inputs, although not labels.<br>**−** Repeated OOB model selection introduces optimism; bootstrap ranges are not formal test-performance confidence intervals. |
+| 2 | Nina | 2 | **Approach:** Classical machine learning ensemble<br>**Methods:** Equal-weight logistic regression ensemble combining metadata-enriched word TF-IDF with statement TF-IDF and scaled one-hot categorical features.<br>**Validation:** Holdout ROC-AUC: text 0.81189; metadata variants 0.85397–0.86177; ensemble 0.86462.<br>**Test AUC:** Second-best test 0.88019 exceeds validation 0.86462 by 0.01557; no clear overfitting or leakage signal.<br>**+** Clearly specified models and training-fold-only preprocessing make the procedure reproducible.<br>**+** Explicitly acknowledges selection optimism, source correlations, and the distinction between prediction and factual verification.<br>**−** Final models retain only 8,000 training rows rather than refitting on all available labels.<br>**−** One repeatedly consulted random split; no grouped or chronological robustness evaluation. |
+| 3 | Martin Szugat Submission #1 | 3 | **Approach:** Classical machine learning<br>**Methods:** Custom browser-based logistic regression using word TF-IDF, metadata tokens, and simple statement features.<br>**Validation:** Holdout ROC-AUC: unigrams 0.7764; bigrams 0.7867; metadata/final 0.8619.<br>**Test AUC:** Test 0.87081 modestly exceeds validation 0.8619; consistent performance, without obvious overfitting evidence.<br>**+** Explicit training-only preprocessing and reproducible implementation details.<br>**+** Clear ablations, coefficient interpretation, and candid discussion of speaker dependence.<br>**−** Single random holdout cannot establish generalization across speakers or time.<br>**−** Strong metadata shortcuts, including 'fake' descriptions, warrant provenance checks. |
+| 4 | Simcha | 4 | **Approach:** Hybrid classical machine learning and transformer embeddings<br>**Methods:** Logistic regression on word/character TF-IDF and mean-pooled DistilBERT embeddings; validation-tuned weighted probability ensemble.<br>**Validation:** ROC-AUC: TF-IDF 0.81379; transformer embeddings 0.82128; ensemble 0.83310.<br>**Test AUC:** Test 0.86346 exceeds validation 0.83310 by 0.03036; encouraging, but unspecified validation prevents diagnosing the gap.<br>**+** Complementary lexical and pretrained semantic representations provide a sensible ensemble.<br>**+** Component scores demonstrate an ensemble improvement over both individual models.<br>**−** Validation split, preprocessing isolation, hyperparameters, and final training procedure are unspecified.<br>**−** No error analysis, leakage discussion, or assessment of ensemble-weight selection optimism. |
 
